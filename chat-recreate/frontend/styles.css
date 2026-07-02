@@ -262,6 +262,22 @@ h1, h2, p { margin-top: 0; }
 .history-card p { color: var(--muted); font-size: 11px; margin-bottom: 16px; }
 .history-card-actions { display: flex; align-items: center; gap: 8px; }
 .history-card-actions .secondary-button { flex: 1; }
+.result-card { display: flex; flex-direction: column; }
+.result-card .history-card-body { flex: 1; display: flex; flex-direction: column; }
+.history-result-video { aspect-ratio: 16 / 10; }
+.history-result-meta {
+  display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; margin-bottom: 14px;
+}
+.history-result-meta span {
+  padding: 5px 8px; border-radius: 999px; background: #f3f4ef;
+  color: #666b60; font-size: 10px; font-weight: 700;
+}
+.history-source-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 38px; border: 1px solid var(--line); border-radius: 10px;
+  color: var(--ink); text-decoration: none; font-size: 12px; font-weight: 700;
+}
+.history-source-link:hover { border-color: #b8c95c; background: #fbfff1; }
 .danger-button {
   border: 1px solid #f0c6ba; background: #fff0ec; color: #b34731;
   padding: 11px 13px; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 12px;

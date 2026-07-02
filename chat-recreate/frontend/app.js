@@ -810,6 +810,45 @@ function historyStatusLabel(status) {
   }[status] || status;
 }
 
+async function renderStaticHistory() {
+  const list = $("#historyList");
+  const detail = $("#historyDetail");
+  detail.classList.add("hidden");
+  list.classList.remove("hidden");
+  list.innerHTML = '<div class="history-loading">正在读取生成结果…</div>';
+  try {
+    const response = await fetch("generated-results.json");
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    const results = await response.json();
+    if (!Array.isArray(results) || !results.length) {
+      list.innerHTML = '<div class="history-empty"><h2>还没有公开结果</h2><p>生成视频发布后会出现在这里。</p></div>';
+      return;
+    }
+    state.history = results;
+    list.innerHTML = results.map(item => `
+      <article class="history-card result-card">
+        <video class="history-result-video" src="${escapeHtml(publicPath(item.video_url))}#t=0.1" controls preload="metadata" playsinline></video>
+        <div class="history-card-body">
+          <div class="history-card-top">
+            <span class="history-status completed">生成结果</span>
+            <time>${escapeHtml(item.generated_at_label || "")}</time>
+          </div>
+          <h2>${escapeHtml(item.case_title)}</h2>
+          <p>${escapeHtml(item.subtitle || item.style || "")}</p>
+          <div class="history-result-meta">
+            <span>${escapeHtml(item.tag || "案例")}</span>
+            <span>${escapeHtml(item.source_aspect || "")}</span>
+            <span>${escapeHtml(item.duration_sec ? `${item.duration_sec}s` : "")}</span>
+          </div>
+          <a class="history-source-link" href="${escapeHtml(publicPath(item.source_video))}" target="_blank" rel="noreferrer">查看源片</a>
+        </div>
+      </article>
+    `).join("");
+  } catch (error) {
+    list.innerHTML = `<div class="history-empty"><h2>生成结果读取失败</h2><p>${escapeHtml(error.message)}</p></div>`;
+  }
+}
+
 async function renderHistory() {
   const list = $("#historyList");
   const detail = $("#historyDetail");
@@ -817,7 +856,7 @@ async function renderHistory() {
   detail.classList.add("hidden");
   list.classList.remove("hidden");
   if (staticDemo) {
-    list.innerHTML = '<div class="history-empty"><h2>静态展示没有历史案例</h2><p>会话、生成记录和成片管理需要本地后端运行。</p></div>';
+    await renderStaticHistory();
     return;
   }
   list.innerHTML = '<div class="history-loading">正在读取案例文件…</div>';
