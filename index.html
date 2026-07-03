@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f3">
+  <title>ReCreate — 对话式广告复刻</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23151713'/%3E%3Cpath d='M26 15h10L25 49H15z' fill='%23dfff45'/%3E%3Cpath d='M39 15h10L38 49H28z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="frontend/styles.css?v=20260703-static-cases">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="ReCreate 首页">
+      <span class="brand-mark"><i></i><i></i></span>
+      <span>ReCreate</span>
+    </a>
+    <div class="header-center">
+      <span class="status-dot"></span>
+      <span id="runtimeText">Seedance 2.0 · 本地运行</span>
+    </div>
+    <div class="header-right">
+      <button class="history-link" data-tab="history" type="button">案例库</button>
+      <span class="case-indicator" id="caseIndicator">尚未选择创意</span>
+      <button class="icon-button" id="resetButton" type="button" aria-label="重置当前工作流" title="重置当前工作流">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v6h6"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <nav class="tabs" aria-label="广告复刻流程">
+      <button class="tab active" data-tab="source" type="button"><span>01</span>灵感库</button>
+      <div class="tab-line"></div>
+      <button class="tab" data-tab="chat" type="button"><span>02</span>对话复刻</button>
+      <div class="tab-line"></div>
+      <button class="tab" data-tab="result" type="button"><span>03</span>生成结果</button>
+    </nav>
+
+    <section class="panel active" id="panel-source" data-panel="source">
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">INSPIRATION LIBRARY</span>
+          <h1>从一个好创意开始</h1>
+          <p>选择一条爆款视频，我们会提取它的节奏和叙事结构。</p>
+        </div>
+        <div class="filter-pills" id="filterPills">
+          <button class="active" data-filter="all" type="button">全部</button>
+          <button data-filter="9:16" type="button">竖屏 9:16</button>
+          <button data-filter="16:9" type="button">横屏 16:9</button>
+          <button data-filter="1:1" type="button">方形 1:1</button>
+        </div>
+      </div>
+      <div class="source-grid" id="sourceGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="panel-chat" data-panel="chat">
+      <div class="chat-shell">
+        <div class="chat-heading">
+          <div>
+            <span class="eyebrow">CREATIVE CONVERSATION</span>
+            <h1>一起把它变成你的广告</h1>
+          </div>
+          <div class="step-badge"><span id="progressStep">1</span> / 3</div>
+        </div>
+
+        <div class="chat-empty" id="chatEmpty">
+          <div class="empty-orbit"><span></span></div>
+          <h2>先选择一条灵感视频</h2>
+          <p>我会从商品、节奏和画面语言开始理解它。</p>
+          <button class="secondary-button" data-jump="source" type="button">浏览灵感库</button>
+        </div>
+
+        <div class="chat-workspace hidden" id="chatWorkspace">
+          <div class="conversation" id="conversation" aria-live="polite"></div>
+
+          <section class="product-picker" id="productPicker">
+            <div class="section-label">
+              <div><span>你的商品</span><small>只需要一个主商品，其余画面交给意图</small></div>
+              <span class="required-badge">必选</span>
+            </div>
+            <label class="dropzone" id="dropzone">
+              <input id="productUpload" type="file" accept="image/*">
+              <span class="upload-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 14v5h14v-5"/></svg>
+              </span>
+              <span><strong>拖入商品图片（暂不支持）</strong><small>或点击上传 · PNG / JPG</small></span>
+            </label>
+            <div class="library-title"><span>快速选择商品</span><i></i></div>
+            <div class="product-library" id="productLibrary"></div>
+            <div class="product-inference-status hidden" id="productInferenceStatus" role="status" aria-live="polite"></div>
+          </section>
+
+          <section class="intent-section hidden" id="intentSection">
+            <div class="section-label">
+              <div><span>选择你想改变的</span><small>可多选，点击已选项可直接调整描述</small></div>
+              <span class="optional-badge">可选</span>
+            </div>
+            <div class="intent-grid" id="intentGrid"></div>
+          </section>
+
+          <div class="action-dock hidden" id="actionDock">
+            <div class="action-copy">
+              <span class="selection-count"><b id="selectedCount">0</b> 项创意调整</span>
+              <small>生成前会先展示完整 Seedance prompt</small>
+              <div class="prompt-compile-status hidden" id="promptCompileStatus" role="status" aria-live="assertive"></div>
+            </div>
+            <button class="primary-button" id="applyButton" type="button">
+              <span>应用并生成 Prompt</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-result" data-panel="result">
+      <div class="page-heading result-heading">
+        <div>
+          <span class="eyebrow">GENERATION STUDIO</span>
+          <h1>你的复刻成片</h1>
+          <p>确认提示词后交给 Seedance 2.0 一次生成完整视频，并保留源片剪辑语法。</p>
+        </div>
+      </div>
+      <div class="result-empty" id="resultEmpty">
+        <div class="film-placeholder"><span></span><span></span><span></span></div>
+        <h2>还没有生成内容</h2>
+        <p>完成对话复刻后，Prompt 和成片会出现在这里。</p>
+        <button class="secondary-button" data-jump="chat" type="button">返回对话</button>
+      </div>
+      <div class="result-workspace hidden" id="resultWorkspace">
+        <div class="result-preview">
+          <div class="video-frame" id="videoFrame">
+            <div class="video-waiting">
+              <span class="generation-orb"></span>
+              <strong>Prompt 已就绪</strong>
+              <small>确认后开始 Seedance 生成</small>
+            </div>
+          </div>
+          <div class="preview-meta">
+            <div><span>画幅</span><b id="resultAspect">9:16</b></div>
+            <div><span>时长</span><b id="resultDuration">15s</b></div>
+            <div><span>模型</span><b>Seedance 2.0</b></div>
+          </div>
+        </div>
+        <aside class="prompt-card">
+          <div class="prompt-card-head">
+            <div><span class="eyebrow">SEEDANCE PROMPT</span><h2>生成指令</h2></div>
+            <button class="text-button" id="copyPrompt" type="button">复制</button>
+          </div>
+          <textarea id="promptPreview" spellcheck="false"></textarea>
+          <div class="prompt-footer">
+            <span><i></i> 已通过结构校验</span>
+            <button class="primary-button" id="generateButton" type="button">开始生成视频</button>
+          </div>
+          <div class="generation-status hidden" id="generationStatus"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-history" data-panel="history">
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">CASE LIBRARY</span>
+          <h1>案例库</h1>
+          <p>点击商品案例，查看上传商品、用户需求，以及原始视频和复刻视频的同步播放对比。</p>
+        </div>
+      </div>
+      <div class="history-list" id="historyList"></div>
+      <div class="history-detail hidden" id="historyDetail"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="frontend/app.js?v=20260703-static-cases"></script>
+</body>
+</html>

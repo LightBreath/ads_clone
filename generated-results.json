@@ -1,0 +1,675 @@
+[
+  {
+    "case_id": "luxury-watch-mechanical-explosion",
+    "case_title": "机械腕表爆炸视图",
+    "subtitle": "齿轮机芯奢华展示",
+    "tag": "腕表 · 机械",
+    "style": "微距机械奢华广告",
+    "source_video": "/assets/videos/luxury-watch-mechanical-explosion.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 10,
+    "video_url": "assets/generated/luxury-watch-mechanical-explosion.mp4",
+    "duration_sec": 10,
+    "run_id": "20260702_101221_0107",
+    "generated_at_label": "2026-07-02 10:12",
+    "product": {
+      "label": "智能手环",
+      "description": "黑色腕带、方形 AMOLED 屏幕与运动数据 UI",
+      "image_url": "/assets/products/smart-band.png",
+      "public_url": "https://s41.ax1x.com/2026/06/30/pmduYJe.png"
+    },
+    "requirements": [
+      {
+        "category": "style",
+        "label": "赛博荧光科技",
+        "description": "将金蓝奢华光效换成极简科技黑与荧光绿对比，保留原片微距镜头与慢动作变速组装的节奏。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「智能手环」，想复刻这条「机械腕表爆炸视图」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "赛博荧光科技：将金蓝奢华光效换成极简科技黑与荧光绿对比，保留原片微距镜头与慢动作变速组装的节奏。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "skincare-morphing-sequence",
+    "case_title": "护肤质地变形",
+    "subtitle": "乳霜流体与肌理转场",
+    "tag": "美妆 · 质地",
+    "style": "微距流体质感广告",
+    "source_video": "/assets/videos/skincare-morphing-sequence.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 10,
+    "video_url": "assets/generated/skincare-morphing-sequence.mp4",
+    "duration_sec": 10,
+    "run_id": "20260701_203307_3ba4",
+    "generated_at_label": "2026-07-01 20:33",
+    "product": {
+      "label": "2aN 粉底液",
+      "description": "2aN Long Wearing Foundation，磨砂方瓶、白色泵头与裸色瓶身",
+      "image_url": "/assets/products/foundation-2an.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134207-81zth-me82i45o701x67"
+    },
+    "requirements": [
+      {
+        "category": "scene",
+        "label": "磨砂玻璃绿洲",
+        "description": "结尾产品展示的林间石台替换为半透明磨砂玻璃台，周围环绕裸色郁金香，契合粉底液的磨砂方瓶设计。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「2aN 粉底液」，想复刻这条「护肤质地变形」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "磨砂玻璃绿洲：结尾产品展示的林间石台替换为半透明磨砂玻璃台，周围环绕裸色郁金香，契合粉底液的磨砂方瓶设计。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "european-town-soda-commercial",
+    "case_title": "欧洲小镇汽水漫步",
+    "subtitle": "横版清爽饮料生活广告",
+    "tag": "饮料 · 生活方式",
+    "style": "明亮欧洲街景商业片",
+    "source_video": "/assets/videos/european-town-soda-commercial.mp4",
+    "source_aspect": "16:9",
+    "source_duration": 15,
+    "video_url": "assets/generated/european-town-soda-commercial.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_202554_d329",
+    "generated_at_label": "2026-07-01 20:25",
+    "product": {
+      "label": "冰红茶",
+      "description": "透明瓶身、琥珀色茶汤与清晰正面标签",
+      "image_url": "/assets/products/ice-tea.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7ra0g-md4f43a5mw5c8c"
+    },
+    "requirements": [
+      {
+        "category": "style",
+        "label": "温暖琥珀金色调",
+        "description": "画面整体调整为温暖的琥珀金色调，强化阳光穿透透明冰红茶瓶身的折射光效，突显茶汤的清澈与冰镇质感。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「冰红茶」，想复刻这条「欧洲小镇汽水漫步」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "温暖琥珀金色调：画面整体调整为温暖的琥珀金色调，强化阳光穿透透明冰红茶瓶身的折射光效，突显茶汤的清澈与冰镇质感。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "cinematic-chocolate-storyboard",
+    "case_title": "丝滑巧克力开场",
+    "subtitle": "电影感手部拆封食品广告",
+    "tag": "食品 · 电影感",
+    "style": "浅景深电影感食品特写",
+    "source_video": "/assets/videos/cinematic-chocolate-storyboard.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/cinematic-chocolate-storyboard.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_202442_e4fd",
+    "generated_at_label": "2026-07-01 20:24",
+    "product": {
+      "label": "巧克力",
+      "description": "多口味独立包装巧克力条，适合食品、零食、拆封和质感特写广告",
+      "image_url": "/assets/products/chocolate.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134207-7rbke-m9tqod4n08uq56"
+    },
+    "requirements": [
+      {
+        "category": "text",
+        "label": "多彩分享中文文案",
+        "description": "将画面中的韩文及品牌Logo替换为“多彩口味，随心分享”等中文标语，片尾配音同步改为温馨的中文旁白。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「巧克力」，想复刻这条「丝滑巧克力开场」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "多彩分享中文文案：将画面中的韩文及品牌Logo替换为“多彩口味，随心分享”等中文标语，片尾配音同步改为温馨的中文旁白。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "gallery-luxury",
+    "case_title": "美术馆漫游",
+    "subtitle": "奢侈品艺术感转场",
+    "tag": "时尚 · 艺术",
+    "style": "克制奢华电影感",
+    "source_video": "/assets/videos/SeaTalk_VDO_20260617_111330.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/gallery-luxury.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_202326_302a",
+    "generated_at_label": "2026-07-01 20:23",
+    "product": {
+      "label": "2aN 粉底液",
+      "description": "2aN Long Wearing Foundation，磨砂方瓶、白色泵头与裸色瓶身",
+      "image_url": "/assets/products/foundation-2an.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134207-81zth-me82i45o701x67"
+    },
+    "requirements": [
+      {
+        "category": "scene",
+        "label": "石膏雕塑展厅",
+        "description": "将美术馆背景替换为洒满阳光的现代石膏雕塑展厅，与粉底液的磨砂方瓶几何美感相呼应。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「2aN 粉底液」，想复刻这条「美术馆漫游」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "石膏雕塑展厅：将美术馆背景替换为洒满阳光的现代石膏雕塑展厅，与粉底液的磨砂方瓶几何美感相呼应。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "closet-dress-tryon",
+    "case_title": "衣橱礼服试穿",
+    "subtitle": "镜面 vlog 风连衣裙展示",
+    "tag": "服饰 · 试穿",
+    "style": "试衣间镜面 vlog",
+    "source_video": "/assets/videos/preview_video_b43ac6f5_compressed_v2.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/closet-dress-tryon.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_195216_8f0a",
+    "generated_at_label": "2026-07-01 19:52",
+    "product": {
+      "label": "连衣裙",
+      "description": "女装连衣裙商品图，适合服饰试穿、衣橱展示与穿搭类广告",
+      "image_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7rbka-m833gbj2fc55c8",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7rbka-m833gbj2fc55c8"
+    },
+    "requirements": [
+      {
+        "category": "scene",
+        "label": "法式庄园派对",
+        "description": "将原本的奢华宴会厅和红毯替换为阳光明媚的法式庄园草坪与露天茶会，保留下车、与朋友合影及走廊漫步的节奏。"
+      },
+      {
+        "category": "character",
+        "label": "法式优雅博主",
+        "description": "女主发型改为慵懒的法式微卷发，搭配简约珍珠耳环，保留原片中自信展示裙子和与闺蜜贴脸合影的互动。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「连衣裙」，想复刻这条「衣橱礼服试穿」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "法式庄园派对：将原本的奢华宴会厅和红毯替换为阳光明媚的法式庄园草坪与露天茶会，保留下车、与朋友合影及走廊漫步的节奏。"
+      },
+      {
+        "role": "user",
+        "text": "法式优雅博主：女主发型改为慵懒的法式微卷发，搭配简约珍珠耳环，保留原片中自信展示裙子和与闺蜜贴脸合影的互动。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "marble-skincare",
+    "case_title": "大理石光影护肤",
+    "subtitle": "极简瓶身与柑橘静物",
+    "tag": "美妆 · 静物",
+    "style": "高反差奢华静物广告",
+    "source_video": "/assets/videos/preview_video_6653e232_compressed_v2.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 13,
+    "video_url": "assets/generated/marble-skincare.mp4",
+    "duration_sec": 13,
+    "run_id": "20260701_165424_d3c8",
+    "generated_at_label": "2026-07-01 16:54",
+    "product": {
+      "label": "2aN 粉底液",
+      "description": "2aN Long Wearing Foundation，磨砂方瓶、白色泵头与裸色瓶身",
+      "image_url": "/assets/products/foundation-2an.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134207-81zth-me82i45o701x67"
+    },
+    "requirements": [
+      {
+        "category": "style",
+        "label": "温暖极简百叶窗光影",
+        "description": "延续原作的强直射阳光与百叶窗阴影设计。温暖的米色调光线投射在2aN粉底液的磨砂方瓶与白色泵头上，在暗色背景中勾勒出瓶身的立体轮廓，营造高端、干净的现代美妆视觉质感。"
+      },
+      {
+        "category": "scene",
+        "label": "奢华大理石梳妆台置景",
+        "description": "场景设定为精致的黑色大理石梳妆台，背景点缀着半透明的磨砂玻璃屏风。2aN粉底液静置于中央，旁边散落着几片白色玫瑰花瓣，阳光透过百叶窗投射出斑驳的光影。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「2aN 粉底液」，想复刻这条「大理石光影护肤」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "温暖极简百叶窗光影：延续原作的强直射阳光与百叶窗阴影设计。温暖的米色调光线投射在2aN粉底液的磨砂方瓶与白色泵头上，在暗色背景中勾勒出瓶身的立体轮廓，营造高端、干净的现代美妆视觉质感。"
+      },
+      {
+        "role": "user",
+        "text": "奢华大理石梳妆台置景：场景设定为精致的黑色大理石梳妆台，背景点缀着半透明的磨砂玻璃屏风。2aN粉底液静置于中央，旁边散落着几片白色玫瑰花瓣，阳光透过百叶窗投射出斑驳的光影。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "airport-tray-reveal",
+    "case_title": "安检托盘惊喜",
+    "subtitle": "俯拍传送带商品揭晓",
+    "tag": "生活 · 定格",
+    "style": "规整俯拍定格动画",
+    "source_video": "/assets/videos/preview_video_27c46816_compressed_v2.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 14,
+    "video_url": "assets/generated/airport-tray-reveal.mp4",
+    "duration_sec": 13,
+    "run_id": "20260701_164533_afe7",
+    "generated_at_label": "2026-07-01 16:45",
+    "product": {
+      "label": "冰红茶",
+      "description": "透明瓶身、琥珀色茶汤与清晰正面标签",
+      "image_url": "/assets/products/ice-tea.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7ra0g-md4f43a5mw5c8c"
+    },
+    "requirements": [
+      {
+        "category": "scene",
+        "label": "便利店自助收银传送带",
+        "description": "场景转为日系极简便利店的自助收银台传送带。灰色托盘替换为木质收银托盘，传送带缓缓移动，店员戴着干净的白手套，从帆布购物袋中拿出一瓶冰红茶，展示其清晰的正面标签与晶莹的琥珀色液体。"
+      },
+      {
+        "category": "style",
+        "label": "阳光冰爽定格风",
+        "description": "画面采用明亮温暖的夏日阳光感顶光，模拟户外晴天。冰红茶瓶身布满细腻、晶莹的冷凝水珠，在定格动画的匀速移动中折射出琥珀色茶汤的清透质感，营造强烈的冰镇消暑视觉效果。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「冰红茶」，想复刻这条「安检托盘惊喜」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "便利店自助收银传送带：场景转为日系极简便利店的自助收银台传送带。灰色托盘替换为木质收银托盘，传送带缓缓移动，店员戴着干净的白手套，从帆布购物袋中拿出一瓶冰红茶，展示其清晰的正面标签与晶莹的琥珀色液体。"
+      },
+      {
+        "role": "user",
+        "text": "阳光冰爽定格风：画面采用明亮温暖的夏日阳光感顶光，模拟户外晴天。冰红茶瓶身布满细腻、晶莹的冷凝水珠，在定格动画的匀速移动中折射出琥珀色茶汤的清透质感，营造强烈的冰镇消暑视觉效果。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "winter-smartwatch-run",
+    "case_title": "四季奔跑动力",
+    "subtitle": "智能手表陪伴户外训练",
+    "tag": "穿戴 · 运动",
+    "style": "电影感四季运动广告",
+    "source_video": "/assets/videos/549310228097018.mp4",
+    "source_aspect": "1:1",
+    "source_duration": 15,
+    "video_url": "assets/generated/winter-smartwatch-run.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_161524_8398",
+    "generated_at_label": "2026-07-01 16:15",
+    "product": {
+      "label": "智能手环",
+      "description": "黑色腕带、方形 AMOLED 屏幕与运动数据 UI",
+      "image_url": "/assets/products/smart-band.png",
+      "public_url": "https://s41.ax1x.com/2026/06/30/pmduYJe.png"
+    },
+    "requirements": [
+      {
+        "category": "scene",
+        "label": "都市霓虹夜跑场景",
+        "description": "将跑步场景替换为繁华都市的夜跑路线，包括霓虹闪烁的商业街区、亮起暖光路灯的跨江大桥、细雨微湿的柏油路面，利用环境中的五彩灯光折射在手环的黑色AMOLED屏幕上。"
+      },
+      {
+        "category": "scene",
+        "label": "越野山地跑路线",
+        "description": "将跑步场景替换为大自然中的越野路线，包括清晨薄雾的森林小径、烈日下的碎石山脊、黄昏的溪流边以及繁星点点的露营地旁。"
+      },
+      {
+        "category": "style",
+        "label": "电影纪实胶片风",
+        "description": "画面采用高对比度的电影胶片色调，带有轻微的复古颗粒感，强调自然光影的明暗过渡，突出汗水、雨滴与智能手环屏幕的高亮对比。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「智能手环」，想复刻这条「四季奔跑动力」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "都市霓虹夜跑场景：将跑步场景替换为繁华都市的夜跑路线，包括霓虹闪烁的商业街区、亮起暖光路灯的跨江大桥、细雨微湿的柏油路面，利用环境中的五彩灯光折射在手环的黑色AMOLED屏幕上。"
+      },
+      {
+        "role": "user",
+        "text": "越野山地跑路线：将跑步场景替换为大自然中的越野路线，包括清晨薄雾的森林小径、烈日下的碎石山脊、黄昏的溪流边以及繁星点点的露营地旁。"
+      },
+      {
+        "role": "user",
+        "text": "电影纪实胶片风：画面采用高对比度的电影胶片色调，带有轻微的复古颗粒感，强调自然光影的明暗过渡，突出汗水、雨滴与智能手环屏幕的高亮对比。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "kids-bike-stopmotion",
+    "case_title": "童趣骑行冒险",
+    "subtitle": "玩具感自行车定格广告",
+    "tag": "运动 · 定格",
+    "style": "电影感玩具定格动画",
+    "source_video": "/assets/videos/preview_video_a651ba2c.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/kids-bike-stopmotion.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_160412_2e65",
+    "generated_at_label": "2026-07-01 16:04",
+    "product": {
+      "label": "摩托车",
+      "description": "摩托车商品图，适合速度感、户外骑行与机械装备类广告",
+      "image_url": "https://down-tw.img.susercontent.com/file/tw-11134207-7rbka-m8oejo9w8a49d5",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134207-7rbka-m8oejo9w8a49d5"
+    },
+    "requirements": [
+      {
+        "category": "style",
+        "label": "黏土定格动画风格",
+        "description": "保留原视频的黏土定格动画风格，角色和摩托车均呈现微缩黏土材质，带有微弱的指纹质感与略带抽帧的物理动感。"
+      },
+      {
+        "category": "style",
+        "label": "赛博朋克黏土风格",
+        "description": "在黏土定格动画的基础上，融入微弱的霓虹灯光与金属质感，使摩托车和骑士装备呈现科技感与复古黏土的碰撞。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「摩托车」，想复刻这条「童趣骑行冒险」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "黏土定格动画风格：保留原视频的黏土定格动画风格，角色和摩托车均呈现微缩黏土材质，带有微弱的指纹质感与略带抽帧的物理动感。"
+      },
+      {
+        "role": "user",
+        "text": "赛博朋克黏土风格：在黏土定格动画的基础上，融入微弱的霓虹灯光与金属质感，使摩托车和骑士装备呈现科技感与复古黏土的碰撞。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "cozy-sweater-tryon",
+    "case_title": "居家针织试穿",
+    "subtitle": "卧室场景服饰口播展示",
+    "tag": "服饰 · 口播",
+    "style": "自然居家穿搭分享",
+    "source_video": "/assets/videos/preview_video_95ba7982.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/cozy-sweater-tryon.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_160322_09f4",
+    "generated_at_label": "2026-07-01 16:03",
+    "product": {
+      "label": "连衣裙",
+      "description": "女装连衣裙商品图，适合服饰试穿、衣橱展示与穿搭类广告",
+      "image_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7rbka-m833gbj2fc55c8",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7rbka-m833gbj2fc55c8"
+    },
+    "requirements": [
+      {
+        "category": "scene",
+        "label": "温馨法式卧室",
+        "description": "阳光充足的法式复古卧室，背景有白色纱帘、木质衣柜和一盆绿植，光线柔和，营造温馨舒适的居家试穿氛围。"
+      },
+      {
+        "category": "style",
+        "label": "法式复古胶片风",
+        "description": "采用温暖微黄的胶片色调，画面带有轻微的颗粒感，搭配窗前自然散射光，营造出慵懒、浪漫的法式日常Vlog质感。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「连衣裙」，想复刻这条「居家针织试穿」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "温馨法式卧室：阳光充足的法式复古卧室，背景有白色纱帘、木质衣柜和一盆绿植，光线柔和，营造温馨舒适的居家试穿氛围。"
+      },
+      {
+        "role": "user",
+        "text": "法式复古胶片风：采用温暖微黄的胶片色调，画面带有轻微的颗粒感，搭配窗前自然散射光，营造出慵懒、浪漫的法式日常Vlog质感。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "drink-stopmotion",
+    "case_title": "微缩公寓日记",
+    "subtitle": "定格动画饮料广告",
+    "tag": "饮料 · 定格",
+    "style": "手作定格动画",
+    "source_video": "/assets/videos/drink2.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/drink-stopmotion.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_131331_54fe",
+    "generated_at_label": "2026-07-01 13:13",
+    "product": {
+      "label": "冰红茶",
+      "description": "透明瓶身、琥珀色茶汤与清晰正面标签",
+      "image_url": "/assets/products/ice-tea.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7ra0g-md4f43a5mw5c8c"
+    },
+    "requirements": [
+      {
+        "category": "style",
+        "label": "温暖治愈毛毡定格动画风格",
+        "description": "延续原作的低帧率毛毡定格动画风格。画面充满细腻的羊毛、毛毡和布艺手工质感。新商品冰红茶也采用微缩毛毡模型呈现，透明瓶身用半透明磨砂质感毛毡表现，内部填充琥珀色羊毛代表茶汤，标签文字清晰可见。"
+      },
+      {
+        "category": "scene",
+        "label": "夏日午后微缩公寓场景",
+        "description": "将时间背景从夜晚调整为明媚的夏日午后。阳光透过毛毡窗帘洒进房间，形成斑驳的光影。公寓楼垂直分布着通风的厨房、放着风扇的客厅和有大窗户的卧室，窗外是蔚蓝的天空和朵朵白云，营造出适合饮用冰红茶的清凉消暑氛围。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「冰红茶」，想复刻这条「微缩公寓日记」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "温暖治愈毛毡定格动画风格：延续原作的低帧率毛毡定格动画风格。画面充满细腻的羊毛、毛毡和布艺手工质感。新商品冰红茶也采用微缩毛毡模型呈现，透明瓶身用半透明磨砂质感毛毡表现，内部填充琥珀色羊毛代表茶汤，标签文字清晰可见。"
+      },
+      {
+        "role": "user",
+        "text": "夏日午后微缩公寓场景：将时间背景从夜晚调整为明媚的夏日午后。阳光透过毛毡窗帘洒进房间，形成斑驳的光影。公寓楼垂直分布着通风的厨房、放着风扇的客厅和有大窗户的卧室，窗外是蔚蓝的天空和朵朵白云，营造出适合饮用冰红茶的清凉消暑氛围。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "smart-band-story",
+    "case_title": "智能生活切片",
+    "subtitle": "科技穿戴产品故事",
+    "tag": "科技 · 穿戴",
+    "style": "清爽科技生活片",
+    "source_video": "/assets/videos/preview_video_417e35c7_compressed_v2.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/smart-band-story.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_112252_6907",
+    "generated_at_label": "2026-07-01 11:22",
+    "product": {
+      "label": "耳机",
+      "description": "头戴式耳机，适合科技与生活方式广告",
+      "image_url": "https://down-tw.img.susercontent.com/file/tw-11134207-7qul6-lfakde2du33jf5",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134207-7qul6-lfakde2du33jf5"
+    },
+    "requirements": [
+      {
+        "category": "style",
+        "label": "科技生活融合风",
+        "description": "画面采用明亮温暖的自然光线，搭配高饱和度、低对比度的清新色调。镜头保留原视频的运动感，但转为平滑的稳定器跟拍，展现科技感与都市日常生活的完美融合。"
+      },
+      {
+        "category": "scene",
+        "label": "都市科技通勤场景",
+        "description": "将滑板公园替换为现代都市街区与科技感地铁站。滑手手持耳机穿梭在玻璃幕墙大楼与现代建筑之间，原视频中惊起的鸽群替换为现代广场上的喷泉或光影粒子。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「耳机」，想复刻这条「智能生活切片」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "科技生活融合风：画面采用明亮温暖的自然光线，搭配高饱和度、低对比度的清新色调。镜头保留原视频的运动感，但转为平滑的稳定器跟拍，展现科技感与都市日常生活的完美融合。"
+      },
+      {
+        "role": "user",
+        "text": "都市科技通勤场景：将滑板公园替换为现代都市街区与科技感地铁站。滑手手持耳机穿梭在玻璃幕墙大楼与现代建筑之间，原视频中惊起的鸽群替换为现代广场上的喷泉或光影粒子。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  },
+  {
+    "case_id": "drink-ice-tea-stadium",
+    "case_title": "球场冠军时刻",
+    "subtitle": "足球场能量饮料广告",
+    "tag": "饮料 · 运动",
+    "style": "高能运动广告",
+    "source_video": "/assets/videos/drink.mp4",
+    "source_aspect": "9:16",
+    "source_duration": 15,
+    "video_url": "assets/generated/drink-ice-tea-stadium.mp4",
+    "duration_sec": 15,
+    "run_id": "20260701_110802_17c0",
+    "generated_at_label": "2026-07-01 11:08",
+    "product": {
+      "label": "冰红茶",
+      "description": "透明瓶身、琥珀色茶汤与清晰正面标签",
+      "image_url": "/assets/products/ice-tea.jpg",
+      "public_url": "https://down-tw.img.susercontent.com/file/tw-11134201-7ra0g-md4f43a5mw5c8c"
+    },
+    "requirements": [
+      {
+        "category": "character",
+        "label": "拟人化冰红茶瓶主角",
+        "description": "将主角替换为透明材质的冰红茶塑料瓶，瓶内装有清澈透亮的琥珀色茶汤，瓶身外侧附着晶莹剔透的冰镇水珠。角色身穿亮黄色足球鞋，保留拟人化的四肢，动作敏捷，在奔跑时瓶内的琥珀色液体随之逼真晃动。"
+      },
+      {
+        "category": "scene",
+        "label": "冰封极地足球场",
+        "description": "将足球场草地替换为晶莹剔透的冰面，四周看台由巨大的冰块和冰雕组成。球场上方有绚丽的极光环绕，角色在冰面上滑行带球，射门时冰屑飞溅，突显冰红茶的极致冰爽感。"
+      },
+      {
+        "category": "text",
+        "label": "冰爽励志品牌标语",
+        "description": "将片尾及瓶身标签文字替换为“冰爽激燃，痛快流汗！”。字体采用冰蓝色带有冰霜裂纹效果的艺术字，在进球庆祝时刻伴随冰晶碎裂特效在屏幕上方居中弹出。"
+      }
+    ],
+    "conversation": [
+      {
+        "role": "user",
+        "text": "我上传/选择了「冰红茶」，想复刻这条「球场冠军时刻」的广告节奏。"
+      },
+      {
+        "role": "user",
+        "text": "拟人化冰红茶瓶主角：将主角替换为透明材质的冰红茶塑料瓶，瓶内装有清澈透亮的琥珀色茶汤，瓶身外侧附着晶莹剔透的冰镇水珠。角色身穿亮黄色足球鞋，保留拟人化的四肢，动作敏捷，在奔跑时瓶内的琥珀色液体随之逼真晃动。"
+      },
+      {
+        "role": "user",
+        "text": "冰封极地足球场：将足球场草地替换为晶莹剔透的冰面，四周看台由巨大的冰块和冰雕组成。球场上方有绚丽的极光环绕，角色在冰面上滑行带球，射门时冰屑飞溅，突显冰红茶的极致冰爽感。"
+      },
+      {
+        "role": "user",
+        "text": "冰爽励志品牌标语：将片尾及瓶身标签文字替换为“冰爽激燃，痛快流汗！”。字体采用冰蓝色带有冰霜裂纹效果的艺术字，在进球庆祝时刻伴随冰晶碎裂特效在屏幕上方居中弹出。"
+      },
+      {
+        "role": "ai",
+        "text": "已保留原始视频的镜头节奏和展示窗口，并生成右侧复刻结果用于同步对比。"
+      }
+    ]
+  }
+]
