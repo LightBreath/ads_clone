@@ -27,7 +27,9 @@ const state = {
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const categoryNames = { scene: "场景", style: "风格", character: "人物", audio: "声音", text: "文案" };
-let staticDemo = location.hostname.endsWith(".github.io") || location.protocol === "file:";
+const runtimeOverride = new URLSearchParams(location.search).get("runtime") === "1";
+const localStaticPort = ["localhost", "127.0.0.1", "::1"].includes(location.hostname) && location.port && location.port !== "5188";
+let staticDemo = !runtimeOverride && (location.hostname.endsWith(".github.io") || location.protocol === "file:" || localStaticPort);
 let syncQueue = Promise.resolve();
 let generationPollTimer = null;
 
@@ -178,22 +180,44 @@ function bindVideoComparison(root = document) {
     const videos = group.querySelectorAll("video");
     if (videos.length < 2) return;
     const pair = [videos[0], videos[1]];
-    const syncing = [false, false];
-    const sync = (target, action) => {
-      const index = pair.indexOf(target);
-      if (syncing[index]) return;
-      syncing[index] = true;
+    let syncing = false;
+    const align = (source, target, force = false) => {
+      if (!Number.isFinite(source.currentTime)) return;
+      if (force || Math.abs(target.currentTime - source.currentTime) > 0.35) {
+        target.currentTime = source.currentTime;
+      }
+    };
+    const sync = (source, target, action) => {
+      if (syncing) return;
+      syncing = true;
+      if (action === "play") {
+        target.playbackRate = source.playbackRate;
+        align(source, target);
+      }
       if (action === "play" && target.paused) {
         const playback = target.play();
         if (playback && typeof playback.catch === "function") playback.catch(() => {});
       } else if (action === "pause" && !target.paused) {
         target.pause();
+      } else if (action === "seek") {
+        align(source, target, true);
+      } else if (action === "rate") {
+        target.playbackRate = source.playbackRate;
+      } else if (action === "time") {
+        align(source, target);
       }
-      setTimeout(() => { syncing[0] = false; syncing[1] = false; }, 0);
+      setTimeout(() => { syncing = false; }, 0);
     };
     pair.forEach(video => {
-      video.addEventListener("play", () => sync(pair[0] === video ? pair[1] : pair[0], "play"));
-      video.addEventListener("pause", () => sync(pair[0] === video ? pair[1] : pair[0], "pause"));
+      const other = () => pair[0] === video ? pair[1] : pair[0];
+      video.addEventListener("play", () => sync(video, other(), "play"));
+      video.addEventListener("pause", () => sync(video, other(), "pause"));
+      video.addEventListener("seeking", () => sync(video, other(), "seek"));
+      video.addEventListener("seeked", () => sync(video, other(), "seek"));
+      video.addEventListener("ratechange", () => sync(video, other(), "rate"));
+      video.addEventListener("timeupdate", () => {
+        if (!video.paused) sync(video, other(), "time");
+      });
     });
   });
 }
@@ -810,6 +834,107 @@ function historyStatusLabel(status) {
   }[status] || status;
 }
 
+function staticProductForResult(item) {
+  if (item.product) return item.product;
+  const product = state.products.find(candidate => candidate.label === item.product_label || candidate.id === item.product_id);
+  return product || {
+    label: item.product_label || "上传商品",
+    description: item.product_description || "公开案例中的替换商品",
+    image_url: item.product_image || "",
+  };
+}
+
+function staticRequirements(item) {
+  if (Array.isArray(item.requirements) && item.requirements.length) return item.requirements;
+  if (Array.isArray(item.intent_candidates) && item.intent_candidates.length) {
+    return item.intent_candidates.filter(candidate => candidate.default_value);
+  }
+  return [];
+}
+
+function staticConversation(item) {
+  if (Array.isArray(item.conversation) && item.conversation.length) return item.conversation;
+  const product = staticProductForResult(item);
+  const requirements = staticRequirements(item);
+  return [
+    { role: "user", text: `我上传/选择了「${product.label}」，想复刻这条「${item.case_title}」的广告节奏。` },
+    ...requirements.map(requirement => ({ role: "user", text: `${requirement.label}：${requirement.description}` })),
+    { role: "ai", text: "我会保留源片的节奏、镜头距离和展示窗口，把核心商品替换为你的上传商品。" },
+  ];
+}
+
+function openStaticResultDetail(caseId) {
+  const list = $("#historyList");
+  const detail = $("#historyDetail");
+  const item = state.history.find(result => result.case_id === caseId);
+  if (!item) return;
+  const product = staticProductForResult(item);
+  const productImage = publicPath(product.image_url || product.local_url || product.public_url || "");
+  const requirements = staticRequirements(item);
+  const messages = staticConversation(item);
+  list.classList.add("hidden");
+  detail.classList.remove("hidden");
+  detail.innerHTML = `
+    <div class="case-detail-head">
+      <button class="text-button" id="staticHistoryBack" type="button">← 返回案例库</button>
+      <span class="history-status completed">公开结果</span>
+    </div>
+    <div class="static-case-layout">
+      <aside class="case-brief-panel">
+        <div class="case-brief-title">
+          <span class="eyebrow">PRODUCT BRIEF</span>
+          <h1>${escapeHtml(item.case_title || "案例详情")}</h1>
+          <p>${escapeHtml(item.subtitle || item.style || "")}</p>
+        </div>
+        <section class="uploaded-product-card">
+          ${productImage ? `<img src="${escapeHtml(productImage)}" alt="${escapeHtml(product.label || "上传商品")}">` : ""}
+          <div>
+            <span>上传商品</span>
+            <strong>${escapeHtml(product.label || "上传商品")}</strong>
+            <p>${escapeHtml(product.description || "用户上传的商品图片")}</p>
+          </div>
+        </section>
+        <section class="brief-conversation" aria-label="用户需求">
+          ${messages.map(message => {
+            const role = message.role === "assistant" ? "ai" : message.role;
+            return `
+              <div class="brief-message ${escapeHtml(role || "user")}">
+                <span>${role === "ai" ? "ReCreate" : "用户"}</span>
+                <p>${escapeHtml(message.text || message.content || "")}</p>
+              </div>
+            `;
+          }).join("")}
+        </section>
+        <div class="case-requirement-tags">
+          ${requirements.map(requirement => `<span>${escapeHtml(requirement.label || requirement.category || "需求")}</span>`).join("")}
+        </div>
+      </aside>
+      <section class="case-compare-panel">
+        <div class="compare-panel-head">
+          <div>
+            <span class="eyebrow">SYNC COMPARISON</span>
+            <h2>原始视频 / 复刻视频</h2>
+          </div>
+          <span>${escapeHtml(item.source_aspect || "")} ${item.duration_sec ? `· ${escapeHtml(item.duration_sec)}s` : ""}</span>
+        </div>
+        <div class="video-compare case-sync-compare" data-video-compare>
+          <section>
+            <label>原始视频</label>
+            <video src="${escapeHtml(publicPath(item.source_video))}" controls preload="metadata" playsinline></video>
+          </section>
+          <section>
+            <label>复刻视频</label>
+            <video src="${escapeHtml(publicPath(item.video_url))}" controls preload="metadata" playsinline></video>
+          </section>
+        </div>
+      </section>
+    </div>
+  `;
+  $("#staticHistoryBack").addEventListener("click", () => renderStaticHistory());
+  bindVideoComparison(detail);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 async function renderStaticHistory() {
   const list = $("#historyList");
   const detail = $("#historyDetail");
@@ -827,23 +952,31 @@ async function renderStaticHistory() {
     state.history = results;
     list.innerHTML = results.map(item => `
       <article class="history-card result-card">
-        <video class="history-result-video" src="${escapeHtml(publicPath(item.video_url))}#t=0.1" controls preload="metadata" playsinline></video>
-        <div class="history-card-body">
-          <div class="history-card-top">
-            <span class="history-status completed">生成结果</span>
-            <time>${escapeHtml(item.generated_at_label || "")}</time>
+        <button class="result-card-button" type="button" data-result-case="${escapeHtml(item.case_id)}">
+          <video class="history-result-video" src="${escapeHtml(publicPath(item.video_url))}#t=0.1" preload="metadata" muted playsinline></video>
+          <div class="history-card-body">
+            <div class="history-card-top">
+              <span class="history-status completed">生成结果</span>
+              <time>${escapeHtml(item.generated_at_label || "")}</time>
+            </div>
+            <h2>${escapeHtml(item.case_title)}</h2>
+            <p>${escapeHtml(item.subtitle || item.style || "")}</p>
+            <div class="product-mini">
+              ${staticProductForResult(item).image_url ? `<img src="${escapeHtml(publicPath(staticProductForResult(item).image_url))}" alt="${escapeHtml(staticProductForResult(item).label || "商品")}">` : ""}
+              <span>${escapeHtml(staticProductForResult(item).label || "上传商品")}</span>
+            </div>
+            <div class="history-result-meta">
+              <span>${escapeHtml(item.tag || "案例")}</span>
+              <span>${escapeHtml(item.source_aspect || "")}</span>
+              <span>${escapeHtml(item.duration_sec ? `${item.duration_sec}s` : "")}</span>
+            </div>
           </div>
-          <h2>${escapeHtml(item.case_title)}</h2>
-          <p>${escapeHtml(item.subtitle || item.style || "")}</p>
-          <div class="history-result-meta">
-            <span>${escapeHtml(item.tag || "案例")}</span>
-            <span>${escapeHtml(item.source_aspect || "")}</span>
-            <span>${escapeHtml(item.duration_sec ? `${item.duration_sec}s` : "")}</span>
-          </div>
-          <a class="history-source-link" href="${escapeHtml(publicPath(item.source_video))}" target="_blank" rel="noreferrer">查看源片</a>
-        </div>
+        </button>
       </article>
     `).join("");
+    $$("[data-result-case]", list).forEach(button => {
+      button.addEventListener("click", () => openStaticResultDetail(button.dataset.resultCase));
+    });
   } catch (error) {
     list.innerHTML = `<div class="history-empty"><h2>生成结果读取失败</h2><p>${escapeHtml(error.message)}</p></div>`;
   }
@@ -1095,13 +1228,14 @@ async function resetStateOnly() {
 async function init() {
   try {
     if (staticDemo) {
+      document.body.classList.add("static-results-mode");
       const cases = await fetch("cases.json").then(response => {
         if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
         return response.json();
       });
       state.cases = cases.map(normalizeCase);
       state.products = STATIC_PRODUCTS.map(normalizeProduct);
-      $("#runtimeText").textContent = "GitHub Pages Demo · 后端需本地运行";
+      $("#runtimeText").textContent = "Open Source Demo · 案例库";
     } else {
       [state.cases, state.products] = await Promise.all([api("/api/cases"), api("/api/products")]);
       state.cases = state.cases.map(normalizeCase);
@@ -1117,6 +1251,7 @@ async function init() {
   } catch (error) {
     if (!staticDemo) {
       staticDemo = true;
+      document.body.classList.add("static-results-mode");
       try {
         const cases = await fetch("cases.json").then(response => {
           if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
@@ -1124,7 +1259,7 @@ async function init() {
         });
         state.cases = cases.map(normalizeCase);
         state.products = STATIC_PRODUCTS.map(normalizeProduct);
-        $("#runtimeText").textContent = "静态展示 · 后端不可用";
+        $("#runtimeText").textContent = "Open Source Demo · 案例库";
         renderSources();
         renderProducts();
       } catch (fallbackError) {
@@ -1159,6 +1294,7 @@ async function init() {
     }
   });
   $("#resetButton").addEventListener("click", reset);
+  if (staticDemo) await switchTab("history");
 }
 
 init();
